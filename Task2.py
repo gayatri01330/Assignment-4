@@ -1,11 +1,12 @@
 data = input("enter some text")
-file = open("output.txt","w")
-file.write(data)
-file.close()
-more_data= input("enter more text")
-file = open("output.txt","a")
-file.write("\n" + more_data)
-file.close()
-file = open("output.txt","r")
-content = file.read()
-print(content)
+with open("output.txt","w") as file:
+    file.write(data)
+    more_data = input("Enter more text: ")
+
+with open("output.txt", "a") as file:
+    file.write("\n" + more_data)
+print("Final file content:")
+
+with open("output.txt", "r") as file:
+    print(file.read())
+
