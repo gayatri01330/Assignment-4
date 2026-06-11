@@ -1,5 +1,5 @@
 try:
-    file = open("sample.txt","r")
+    with open("sample.txt", "r") as file:
     print("reading file content")
     for line in file:
         print(line)
